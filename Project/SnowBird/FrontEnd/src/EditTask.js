@@ -1,5 +1,5 @@
-import "./styles/realstyle.css";
-function AddTask() {
+import "./styles/realsstyles.css";
+function EditTask() {
   return (
     <div>
       <div className="outer">
@@ -24,7 +24,7 @@ function AddTask() {
           {/* Main outline */}
           <div className="secondcolumn">
             <div className="buttonright">
-              <label>AddTask</label>
+              <label>EditTask</label>
               <button>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
@@ -70,4 +70,4 @@ function AddTask() {
     </div>
   );
 }
-export default AddTask;
+export default EditTask;
