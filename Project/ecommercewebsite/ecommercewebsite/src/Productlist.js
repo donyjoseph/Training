@@ -4,8 +4,7 @@ function Productlist() {
     <div>
       <div className="outer">
         {/* USer name with icon */}
-        <div className="firstrow">
-        </div>
+        <div className="firstrow"></div>
         <div className="secondrow">
           {/* Side navigation menu */}
           <div className="firstcolumn">
@@ -16,18 +15,38 @@ function Productlist() {
               <li>Logout</li>
             </nav>
           </div>
-
-          {/* Main outline */}
+    {/* Main outline */}
+          <label>
+            {" "}
+            <h1>Productlist</h1>
+          </label>
           <div className="secondcolumn">
-            <div className="buttonright">
-              <label>Edit Product</label>
-            </div>
+            <div className="buttonright"></div>
             <div className="seccolumsecondrow">
-               <tbody>
-                    <tr className="trow"><td>1</td>   <td>User1</td>  <td>ToDo</td>  <td>Api</td><td>Ecommerce</td></tr>
-                    <tr className="trow"><td>2</td>   <td>User2</td>  <td>ToDo</td>  <td>Ui</td><td>Jira</td></tr>
+            <button className="btn1">ADD NEW</button>
+              <table className="tblData">
+                <thead>
+                  <th>Dress</th>
+                  <th>Eletronics</th>
+                  <th>Sports</th>
+                  <th>Kids</th>
+                </thead>
+                <tbody>
+                  <tr className="trow">
+                    <td>Pants</td>
+                    <td>Tv</td>
+                    <td>Bat</td>
+                    <td>Toys</td>
+                  </tr>
+                  <tr className="trow">
+                    <td>Shirt</td>
+                    <td>Laptop</td>
+                    <td>Ball</td>
+                    <td>Games</td>
+                  </tr>
                 </tbody>
-              </div>
+              </table>
+            </div>
           </div>
         </div>
       </div>

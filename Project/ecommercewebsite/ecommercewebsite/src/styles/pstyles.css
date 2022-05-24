@@ -1,8 +1,9 @@
 body{
-    background-color: grey;
+    background-color:  lightgrey;
 }
 .tableborder tbody td{
   width: 50% ;
+  
 
 }
 .wrapper{
@@ -19,7 +20,8 @@ body{
   float: right;
 }
 td {
-  text-align: center;
+  text-align: right;
+  height: 50px;
 }
 .btnSubmitRightNav{
   background-color: darkgreen;
@@ -31,17 +33,33 @@ td {
   float:left ;
 }
 .btnProduct{
-  float: left;
+  float: right;
+  
 }
 .tblproduct{
   width: 100%;
+  
 }
 .tableborder{
-  width: 100%;
-  border: 1px solid #333;
+  padding-left: 50px;
+  border: 1px solid rgb(201, 12, 12);
+  border-collapse: collapse;
+  border-style: dotted;
 }
 .tblData{
   width: 100%;
 }
 .tblWidth{
   width: 20%;}
+  h1{
+    color: blue;
+    font-size: 20px;
+  }
+  .btn1{
+    border: none;
+    background-color: rgb(15, 54, 11);
+    padding: 10px;
+    font-weight: bold;
+
+  }
+  
