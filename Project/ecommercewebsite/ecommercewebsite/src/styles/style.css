@@ -2,12 +2,12 @@ body{
   background: #0f4e39;
 }
 .form{
-  width: 350px;
+  width: 500px;
   border-radius: 10px ;
   margin-top: 100px ;
   margin-left: 100px;
   height: 400px;
-  background-color: white;
+  background-color: lightgray;
   padding-top: 60px ;
   padding-left: 60px ;
   padding-right: 60px ;
@@ -30,7 +30,7 @@ body{
 
 
 .btn1{
-  width: 90%;
+  width: 40%;
   margin-top: 10px;
   cursor: pointer;
   font-size: 15px;
@@ -40,7 +40,7 @@ body{
 }
 
 input[type="Next"]:hover {
-  background: #6cf0c2;
+  background: #0bd18c;
 }
 
 .button-container {
@@ -49,7 +49,7 @@ input[type="Next"]:hover {
 }
 
 .login-form {
-  background-color: white;
+  background-color: rgb(250, 208, 208);
   padding: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -74,6 +74,10 @@ input[type="Next"]:hover {
   gap: 8px;
   margin: 10px;
   border: #01d28e;
+  padding-top: 60px ;
+  padding-left: 60px ;
+  padding-right: 60px ;
+
 }
 .text-input{
 padding: 10px;

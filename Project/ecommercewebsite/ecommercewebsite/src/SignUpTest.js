@@ -1,11 +1,10 @@
 import "./styles/sstyle.css";
-export default function Signup() {
+export default function App() {
   return (
     <div>
      <div class="outercontainer">
           <div class="signupcontainer">
-           
-            <h1>Add an address so you can get paid</h1>
+           <h1>Add an address so you can get paid</h1>
             <h2>This will be used as your default business address.</h2>
             <h2>You can always change this later.</h2>
             <div class="row">
@@ -41,7 +40,7 @@ export default function Signup() {
             <div class="row">
               <div class="full">
                 <div class="element">
-                  <label>Apartment, suite, etc.</label>
+                  <label>Appartment, suite, etc.</label>
                   <input type="text" />
                 </div>
               </div>
@@ -61,7 +60,7 @@ export default function Signup() {
               </div>
               <div class="onethird">
                 <div class="element">
-                  <label>Pin code</label>
+                  <label>PIN Code</label>
                   <input type="text" />
                 </div>
               </div>
@@ -92,7 +91,7 @@ export default function Signup() {
                 <button>&#60; Back</button>
               </div>
               <div class="half finishbutton">
-                <button>Enter My store</button>
+                <button>SignUp</button>
               </div>
             </div>
           </div>
@@ -100,4 +99,3 @@ export default function Signup() {
        </div>
   );
 }
-
