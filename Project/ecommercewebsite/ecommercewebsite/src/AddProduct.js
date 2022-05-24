@@ -41,8 +41,7 @@ function AddProduct() {
                 </lable>
                 <input className="titleinput" type="text"></input>
               </div>
-              <button className="btn1">AddProduct</button>
-              
+              <button className="btn1">AddProduct</button>              
             </div>
           </div>
         </div>

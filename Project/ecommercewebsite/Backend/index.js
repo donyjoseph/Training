@@ -11,9 +11,7 @@ var con = mysql.createConnection(
 })
 app.post('/uservalidate',function(req,res)
 {
-    con.connect(function(err)    
-    {
-    
+   
     con.query(sql,function(err,result)
     {
         if(err)
@@ -25,6 +23,7 @@ app.post('/uservalidate',function(req,res)
             res.send(result);
         }
 })
+    })
     app.post('/fetchproduct', function (req, res) 
 
 {
@@ -75,12 +74,11 @@ app.post('/addproduct', function (req, res)
 app.post('/countryfetch', function (req, res) 
 
 {
-   var a=req.body.id;
    con.connect(function (err) 
    {
        
     if (err) throw err;
-    var sql="select txtcountryname from tblcountry;";
+    var sql="select txtCountryName from tblcountry;";
        con.query(sql,function(err,result)
     {
         if(err)
@@ -116,9 +114,7 @@ app.post('/editproduct', function (req, res)
         });
     })
 });
-})
-});
 app.listen(5000,function()
 {
- console.log("server is connected!!!");
+ console.log("5000 server is connected!!!");
 });

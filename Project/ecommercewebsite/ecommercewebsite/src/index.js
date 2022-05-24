@@ -13,7 +13,7 @@ import Productlists from './Productlist';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Productlists/>
+    <LoginPage/>
   </React.StrictMode>
 );
 
