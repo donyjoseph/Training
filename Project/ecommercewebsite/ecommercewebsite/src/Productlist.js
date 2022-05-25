@@ -1,5 +1,27 @@
 import "./styles/pstyles.css";
+import { useState } from "react";
+import axios from "axios";
+
 function Productlist() {
+  const [Productlist, setproductlist] = useState([
+    { Id: "1", productName: "ABB", Rate: "100", Tax: "16" },
+    { Id: "2", productName: "AAAC", Rate: "200", Tax: "12" },
+    { Id: "3", productName: "AAAB", Rate: "300", Tax: "14" },
+  ])
+  function apiCall() {
+
+    const url="http://localhost:5000/productlist";
+    const header={}
+    var request={}
+    axios.post(url,request, header).then((res)=>{
+    console.log(" :" + JSON.stringify());
+    console.log(" :" + JSON.stringify());
+      
+    }).catch((err)=>{
+
+    });
+  }
+
   return (
     <div>
       <div className="outer">
@@ -23,27 +45,16 @@ function Productlist() {
           <div className="secondcolumn">
             <div className="buttonright"></div>
             <div className="seccolumsecondrow">
-            <button className="btn1">ADD NEW</button>
+            <button className="btn1"onClick={apiCall}>ADD NEW</button>
               <table className="tblData">
                 <thead>
-                  <th>Dress</th>
-                  <th>Eletronics</th>
-                  <th>Sports</th>
-                  <th>Kids</th>
+                  <th>Id</th>
+                  <th>productName</th>
+                  <th>Rate</th>
+                  <th>Tax</th>
                 </thead>
                 <tbody>
-                  <tr className="trow">
-                    <td>Pants</td>
-                    <td>Tv</td>
-                    <td>Bat</td>
-                    <td>Toys</td>
-                  </tr>
-                  <tr className="trow">
-                    <td>Shirt</td>
-                    <td>Laptop</td>
-                    <td>Ball</td>
-                    <td>Games</td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
