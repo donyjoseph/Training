@@ -1,5 +1,11 @@
+import { useState } from "react";
 import "./styles/AStyle.css";
 function AddProduct() {
+  const[txtProdName,setProdName]=useState("")
+  const[txtProdPrice,setProdPrice]=useState("")
+  const[txtGst,settxtGst]=useState("")
+
+  const[]=useState("")
   return (
     <div>
       <div className="outer">

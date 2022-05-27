@@ -11,9 +11,12 @@ var con = mysql.createConnection({
   password: "password",
   database: "country",
 });
+con.connect(function(err){
+  if(err)throw err('connected')
+  else console.log
+})
 app.post("/uservalidate", function (req, res) {
   console.log(req.body);
-  var Username = req.body.txtUsername;
   var password = req.body.txtPassword;
   var sql =
     "select id from tblusers where txtUsername='" +
@@ -31,8 +34,6 @@ console.log(sql)
   });
 });
 app.post("/addproduct", function (req, res) {
-  con.connect(function (err) {
-    if (err) throw err;
 
     var sql =
       "insert into tblproduct (txtProdName,txtProdPrice) values('test',45)";
@@ -44,10 +45,8 @@ app.post("/addproduct", function (req, res) {
       }
     });
   });
-});
+
 app.post("/productfetch", function (req, res) {
-  con.connect(function (err) {
-    if (err) throw err;
     var sql = "select id,txtProdName,txtProdPrice,txtGst from tblproduct; ";
     con.query(sql, function (err, result) {
       if (err) {
@@ -57,11 +56,9 @@ app.post("/productfetch", function (req, res) {
       }
     });
   });
-});
+
 app.post("/editproduct", function (req, res) {
-  con.connect(function (err) {
-    if (err) throw err;
-    var sql = "update tblproduct set txtProdPrice='200' where id=1";
+   var sql = "update tblproduct set txtProdPrice='200' where id=1";
     con.query(sql, function (err, result) {
       if (err) {
         console.log(err);
@@ -70,7 +67,6 @@ app.post("/editproduct", function (req, res) {
       }
     });
   });
-});
 app.listen(5000, function () {
   console.log("5000 server is connected!!!");
 });

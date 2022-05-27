@@ -5,7 +5,7 @@ import LoginPage from "./LoginPage";
 import Productlist from "./Productlist";
 import Signup from "./Signup";
 
-function Navigation() {
+function Navigation(){
   return (
     <div>
       <BrowserRouter>

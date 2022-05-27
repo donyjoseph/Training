@@ -1,16 +1,28 @@
 body{
-    background-color:  lightgrey;
+    background-color:  white;
+    margin: 0;
+    padding: 0;
+
 }
 .tableborder tbody td{
   width: 50% ;
+  background-color: rgb(248, 239, 239);
+}
+.seccolumsecondrow th {
+  width: 29%;
+  border-top: 1px rgb(119, 20, 20);
+  border-bottom: 1px darkgrey;
+  border-bottom: 10px;
+  text-align: center;
+  padding: 22px;
   
-
+  
 }
 .wrapper{
   margin: 12%;
   height: 350px;
   width: 800px;
-  background-color: #dcf0e8;
+  background-color: #09106e;
   padding-top: 100px ;
   padding-left: 60px ;
   padding-right: 60px ;
@@ -19,9 +31,12 @@ body{
 .rightNav{
   float: right;
 }
-td {
+th {
   text-align: right;
   height: 50px;
+  border-top: 1px  ;
+  border-bottom: 1px;
+  
 }
 .btnSubmitRightNav{
   background-color: darkgreen;
@@ -40,26 +55,90 @@ td {
   width: 100%;
   
 }
+.tblNew {
+width: 95%;
+
+}
+.tblNew th{
+  border: 1px solid black;
+  border-left:0;
+  border-right:0;
+  height: 30px;
+  padding: 0px;
+  margin: 0%;
+  text-align: center;
+}
+.tblNew td{
+  text-align: center;
+}
 .tableborder{
   padding-left: 50px;
-  border: 1px solid rgb(201, 12, 12);
+  border: 1px solid rgb(189, 24, 24);
   border-collapse: collapse;
   border-style: dotted;
+  
 }
 .tblData{
   width: 100%;
+  height: 20px;
+  border-top: 10px;
+  border-bottom: 10px;
 }
 .tblWidth{
   width: 20%;}
   h1{
-    color: blue;
+    color:black;
+    padding-left: 50px;
     font-size: 20px;
   }
   .btn1{
-    border: none;
-    background-color: rgb(15, 54, 11);
+    margin-bottom: 20px;
+    margin-right: 70px;
+    border: 10px;
+    background-color: darkgray;
     padding: 10px;
-    font-weight: bold;
+    width: 150px;
 
   }
-  
+  .firstcolumn{
+    color: gray;
+    background-color:white(244, 244, 247);
+    margin-top: 0%;
+    
+  }
+  .firstrow{
+    color: rgb(20, 161, 50);
+  }
+  .nav{
+    background-color: rgb(165, 127, 255);
+  }
+  .tblhead{
+    border-top: 1px solid rgb(13, 14, 13);
+  }
+  .usericon {
+    height: 4vh;
+    width: 32px;
+    border-radius: 25px;
+    background-color: blue;
+    float: right;
+}
+.firstrow {
+  border-bottom: 1px solid darkgrey;
+  text-align: right;
+  height: 12vh;
+}
+h5{
+  padding-bottom: 10px;
+}
+td{
+  border-top: 1px solid rgb(92, 27, 243);
+}
+.secondrow {
+  width: 100%;
+  height: 100vh;
+  float: left;
+}
+
+tr:hover{
+  background-color: #5a47c7;
+}

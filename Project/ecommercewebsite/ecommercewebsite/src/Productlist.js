@@ -1,63 +1,76 @@
+import { useEffect, useState } from "react";
 import "./styles/pstyles.css";
-import { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from 'react-router-dom'
 function Productlist() {
-  const [Productlist, setproductlist] = useState([
-    { Id: "1", productName: "ABB", Rate: "100", Tax: "16" },
-    { Id: "2", productName: "AAAC", Rate: "200", Tax: "12" },
-    { Id: "3", productName: "AAAB", Rate: "300", Tax: "14" },
-  ])
-  function apiCall() {
-
-    const url="http://localhost:5000/productlist";
-    const header={}
-    var request={}
-    axios.post(url,request, header).then((res)=>{
-    console.log(" :" + JSON.stringify());
-    console.log(" :" + JSON.stringify());
-      
-    }).catch((err)=>{
-
-    });
-  }
+const [array, setArray] = useState([
+   ]);
+const navigate = useNavigate()
+function productLink(){
+  console.log('worked')
+  navigate('/AddProduct')
+}
+function RowClick(e, id){
+  e.preventDefault();
+  localStorage.setItem("itemforedit",id) 
+  navigate('/EditProduct')
+}
+  useEffect(() => {
+    const url = "http://localhost:5000/productfetch";
+    const request = {};
+    const header = {};
+    axios
+     .post(url, request, header)
+     .then((res) => {
+      setArray(res.data);
+       console.log(res);
+     })
+      .catch((err) => {});
+  }, []);
 
   return (
     <div>
-      <div className="outer">
-        {/* USer name with icon */}
-        <div className="firstrow"></div>
-        <div className="secondrow">
-          {/* Side navigation menu */}
-          <div className="firstcolumn">
-            <nav>
-              <li>Home</li>
-              <li>Products</li>
-              <li>Order</li>
-              <li>Logout</li>
-            </nav>
-          </div>
-    {/* Main outline */}
-          <label>
-            {" "}
-            <h1>Productlist</h1>
-          </label>
-          <div className="secondcolumn">
-            <div className="buttonright"></div>
-            <div className="seccolumsecondrow">
-            <button className="btn1"onClick={apiCall}>ADD NEW</button>
-              <table className="tblData">
-                <thead>
-                  <th>Id</th>
-                  <th>productName</th>
-                  <th>Rate</th>
-                  <th>Tax</th>
-                </thead>
-                <tbody>
-                  
-                </tbody>
-              </table>
-            </div>
+      <div className="usericon">
+        <h5>User</h5>
+      </div>
+      <div className="firstrow"></div>
+      <div className="secondrow">
+        {/* Side navigation menu */}
+        <div className="firstcolumn">
+          <nav className="navbar-background">
+            <li>Home</li>
+            <li>Products</li>
+            <li>Order</li>
+            <li>Logout</li>
+          </nav>
+        </div>
+        {/* Main outline */}
+        <label>
+          {" "}
+          <h1>Productlist</h1>
+        </label>
+        <div className="secondcolumn">
+          <div className="buttonright"></div>
+          <div className="seccolumsecondrow">
+            <button className="btn1" onClick={productLink}>Add New</button>
+            <table className="tblNew" cellPadding="0" cellspacing="0">
+              <thead>
+                <th>Id</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>Gst</th>
+              </thead>
+              <tbody>
+               {array.map((itm,num)=>{
+                 return <tr  onClick={(e)=>{RowClick(e,itm.id)}}>
+                   <td>{itm.id}</td>
+                   <td>{itm.txtProdName}</td>
+                   <td>{itm.txtProdPrice}</td>
+                   <td>{itm.txtGst}</td>
+                   </tr>
+                   })}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

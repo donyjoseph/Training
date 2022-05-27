@@ -148,8 +148,7 @@
   .seccolumsecondrow{
   padding-top: 10px;
   width: 100%;
-  height: 100vh;
-  
+  height: 100vh;  
   margin-top: 5px;
   }
   
@@ -159,7 +158,6 @@
       border-bottom: 10px;
       text-align: center;
       padding: 5px;
-      background-color:peru;
      
   }
   
