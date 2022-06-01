@@ -17,6 +17,7 @@ con.connect(function(err){
 })
 app.post("/uservalidate", function (req, res) {
   console.log(req.body);
+  var Username = req.body.txtUsername;
   var password = req.body.txtPassword;
   var sql =
     "select id from tblusers where txtUsername='" +
@@ -58,7 +59,8 @@ app.post("/productfetch", function (req, res) {
   });
 
 app.post("/editproduct", function (req, res) {
-   var sql = "update tblproduct set txtProdPrice='200' where id=1";
+  var sql="select id, from tblproduct; ";
+  var sql="update tblproduct set txtProdName= 'Sambar Powder', txtProdPrice= 'ddd',txtGst='dddd' WHERE id = 1"
     con.query(sql, function (err, result) {
       if (err) {
         console.log(err);

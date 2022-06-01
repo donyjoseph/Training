@@ -130,7 +130,7 @@
     font-weight: 900;
     font-size: x-large;
     text-align: center;
-    padding-left: 5%;
+    padding-left: 0%;
     float: left;
       
   }
@@ -196,12 +196,20 @@
       height: 5vh;
   }
   .btn1{
-    width: 20%;
-    margin-top: 10px;
+    width: 30%;
+    margin-top: 22px;
     cursor: pointer;
     font-size: 15px;
-    background: #0f4e39;
+    background:darkgrey;
     color: #fff;
-    padding: 15px 12px;
+    padding: 9px;
+    width: 146px;
     float: right;
   }
+  .usericon {
+    height: 4vh;
+    width: 32px;
+    border-radius: 25px;
+    background-color: blue;
+    float: right;
+}

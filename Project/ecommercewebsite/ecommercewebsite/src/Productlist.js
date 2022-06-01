@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import "./styles/pstyles.css";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 function Productlist() {
 const [array, setArray] = useState([
    ]);
 const navigate = useNavigate()
 function productLink(){
   console.log('worked')
-  navigate('/AddProduct')
+  navigate('/AddProduct')  
 }
-function RowClick(e, id){
-  e.preventDefault();
-  localStorage.setItem("itemforedit",id) 
+function RowClick(e, rowid){
+  e.preventDefault();    
+  //console.log(JSON.stringify(array[rowid].id))
+  localStorage.setItem("itemforedit",rowid ) 
   navigate('/EditProduct')
 }
   useEffect(() => {
@@ -23,14 +24,14 @@ function RowClick(e, id){
      .post(url, request, header)
      .then((res) => {
       setArray(res.data);
-       console.log(res);
+       console.log(res.data);
      })
       .catch((err) => {});
   }, []);
 
   return (
     <div>
-      <div className="usericon">
+      <div className="usericonlist">
         <h5>User</h5>
       </div>
       <div className="firstrow"></div>

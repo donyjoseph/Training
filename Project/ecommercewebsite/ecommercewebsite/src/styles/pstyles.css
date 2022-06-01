@@ -87,7 +87,7 @@ width: 95%;
 .tblWidth{
   width: 20%;}
   h1{
-    color:black;
+    color:rgb(36, 33, 33);
     padding-left: 50px;
     font-size: 20px;
   }
@@ -97,7 +97,7 @@ width: 95%;
     border: 10px;
     background-color: darkgray;
     padding: 10px;
-    width: 150px;
+    width: 146px;
 
   }
   .firstcolumn{
@@ -141,4 +141,11 @@ td{
 
 tr:hover{
   background-color: #5a47c7;
+}
+.usericonlist{
+  height:4vh;
+    width: 31px;
+    border-radius: 25px;
+    background-color: blue;
+    float: right;
 }
