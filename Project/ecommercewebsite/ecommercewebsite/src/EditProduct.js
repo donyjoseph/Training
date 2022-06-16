@@ -2,49 +2,48 @@ import { Profiler, useEffect, useState } from "react";
 import "./styles/EStyle.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Productlist from "./Productlist";
 function EditProduct() {
   const [id, setId] = useState("");
-  const [ProductName, setProductName] = useState("");
-  const [ProductRate, setProductRate] = useState("");
+  const [data, setData] = useState("");
+  const [ProdName, setProdName] = useState("");
+  const [ProdPrice, setProdPrice] = useState("");
   const [errordisplay, setErrorDisplay] = useState("");
-  const [Gst, setGst] = useState("");
+  const [ProdGst, setProdGst] = useState("");
   const onChange = (e) => {
     e.preventDefault();
-    setProductName(e.target.value);
+    setProdName(e.target.value);
   };
   const PonChange = (e) => {
     e.preventDefault();
-    setProductRate(e.target.value);
+    setProdPrice(e.target.value);
   };
   const GstonChange = (e) => {
     e.preventDefault();
-    setGst(e.target.value);
+    setProdGst(e.target.value);
   };
   const navigate = useNavigate();
-  function productLink() {
+  function productlink() {
     console.log("worked");
-    navigate("/AddProduct");
+    navigate("/Productlist");
   }
   useEffect(() => {
     setId(localStorage.getItem("itemforedit"));
-    const url = "http://localhost:5000/productfetch";
+    console.log("id"+id)
+    const editUrl = "http://localhost:5000/editfetch";
     const request = {};
     const header = {};
     axios
-      .post(url, request, header)
+      .post(editUrl, request, header)
       .then((res) => {
-    console.log("ProductName :" + JSON.stringify(ProductName));
-    console.log("ProductRate :" + JSON.stringify(ProductRate));
-    console.log("Gst :" + JSON.stringify(Gst));
-        console.log(res.data);
-        if (res.data.insertId ) {
-          navigate("/productlist");
-        } else {
-          setErrorDisplay("Error");
-        }
+        console.log(res.data[0])
+        console.log(res.data[0].id)
+        setProdName(res.data[0].txtProdName)
+        setProdPrice(res.data[0].txtProdPrice)
+        setProdGst(res.data[0].txtGst)
       })
       .catch((err) => {});
-  });
+  },[]);
 
   return (
       <div>
@@ -68,7 +67,7 @@ function EditProduct() {
 
           {/* Main outline */}
           <div className="secondcolumn">
-          <button className="btn1" onClick={productLink} >Save</button>
+          <button className="btn1" onClick={productlink} >Save</button>
           <label>{errordisplay}</label>
             <div className="buttonright">
               <label>EditProduct</label>
@@ -79,7 +78,7 @@ function EditProduct() {
                   <h4>ProductName</h4>
                   </lable>
                 <input
-                value={ProductName}
+                value={ProdName}
                 onChange={(e) => {
                   onChange(e);
                 }} className="titleinput" type="text"></input>
@@ -89,7 +88,7 @@ function EditProduct() {
                   <h4>ProductRate</h4>
                 </lable>
                 <input
-                value={ProductRate}
+                value={ProdPrice}
                 onChange={(e) => {
                   PonChange(e);
                 }} className="titleinput" type="text"></input>
@@ -99,7 +98,7 @@ function EditProduct() {
                   <h4>GST</h4>
                 </lable>
                 <input
-                value={Gst}
+                value={ProdGst}
                 onChange={(e) => {
                   GstonChange(e);
                 }} className="titleinput" type="text"></input>

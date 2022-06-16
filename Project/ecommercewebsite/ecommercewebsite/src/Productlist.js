@@ -3,18 +3,16 @@ import "./styles/pstyles.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 function Productlist() {
-const [array, setArray] = useState([
+const [array, setArray] = useState([ 
    ]);
 const navigate = useNavigate()
 function productLink(){
-  console.log('worked')
-  navigate('/AddProduct')  
+  console.log('worked')  
 }
 function RowClick(e, rowid){
-  e.preventDefault();    
-  //console.log(JSON.stringify(array[rowid].id))
   localStorage.setItem("itemforedit",rowid ) 
   navigate('/EditProduct')
+  e.preventDefault(); 
 }
   useEffect(() => {
     const url = "http://localhost:5000/productfetch";
@@ -65,9 +63,9 @@ function RowClick(e, rowid){
                {array.map((itm,num)=>{
                  return <tr  onClick={(e)=>{RowClick(e,itm.id)}}>
                    <td>{itm.id}</td>
-                   <td>{itm.txtProdName}</td>
-                   <td>{itm.txtProdPrice}</td>
-                   <td>{itm.txtGst}</td>
+                   <td>{itm.ProdName}</td>
+                   <td>{itm.ProdPrice}</td>
+                   <td>{itm.ProdGst}</td>
                    </tr>
                    })}
               </tbody>

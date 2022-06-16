@@ -1,9 +1,8 @@
 //import from "express";
 import { useState } from "react";
 import "./styles/style.css";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navigation from "./Navigation";
-import { useNavigate } from 'react-router-dom'
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setpassword] = useState("");
@@ -35,17 +34,14 @@ function LoginPage() {
       //else
         //error
       if(res.data.length>0){
-        navigate('/productlist')
-      }else{
-        setErrorDisplay("User not found")
-      }
-    }).catch((err)=>{
-
-    });
-    
+          navigate("/productlist");
+        } else {
+          setErrorDisplay("error");
+        }
+      })
+      .catch((err) => {});
   }
-
-  return (
+return (
     <div className="form">
       <h1>Log in{password}</h1>
       <p>Continue to Shopify</p>
@@ -65,8 +61,8 @@ function LoginPage() {
           onChange={(e) => {
             passwordhandleChange(e);
           }}
-          type="password"
-          placeholder="Password"
+          type="text"
+          placeholder="username"
           className="text-input"
           required
         />

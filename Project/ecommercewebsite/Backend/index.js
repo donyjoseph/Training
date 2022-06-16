@@ -34,10 +34,14 @@ console.log(sql)
     }
   });
 });
-app.post("/addproduct", function (req, res) {
-
+  app.post("/addproduct", function (req, res) {
+    console.log(req.body);
+    var ProdName = req.body.txtProdName;
+    var ProdPrice = req.body.txtProdPrice;
+    var ProdGst = req.body.txtGst;
     var sql =
-      "insert into tblproduct (txtProdName,txtProdPrice) values('test',45)";
+      "insert into tblproduct (txtProdName,txtProdPrice,txtGst) values('"+ProdName+"','"+ProdPrice+"','"+ProdGst+"')";
+  console.log(sql)
     con.query(sql, function (err, result) {
       if (err) {
         console.log(err);
@@ -46,9 +50,22 @@ app.post("/addproduct", function (req, res) {
       }
     });
   });
+  //app.post("/addproduct", function (req, res) {
+
+    //var sql =
+//"insert into tblproduct (txtProdName,txtProdPrice) values('test',45)";
+    //con.query(sql, function (err, result) {
+     // if (err) {
+       // console.log(err);
+     // } else {
+       // res.send(result);
+     // }
+   // });
+ // });
 
 app.post("/productfetch", function (req, res) {
-    var sql = "select id,txtProdName,txtProdPrice,txtGst from tblproduct; ";
+  console.log(req.body);
+    var sql = "select id,txtProdName,txtProdPrice,txtGst from tblproduct";
     con.query(sql, function (err, result) {
       if (err) {
         console.log(err);
@@ -57,10 +74,22 @@ app.post("/productfetch", function (req, res) {
       }
     });
   });
+
+  app.post("/editfetch", function (req, res) {
+    var sql = "select id,txtProdName,txtProdPrice,txtGst from tblproduct ";
+    con.query(sql, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
+
 
 app.post("/editproduct", function (req, res) {
   var sql="select id, from tblproduct; ";
-  var sql="update tblproduct set txtProdName= 'Sambar Powder', txtProdPrice= 'ddd',txtGst='dddd' WHERE id = 1"
+  var sql="update tblproduct set txtProdName= 'Sambar Powder', txtProdPrice= 'ddd',txtGst='dddd' WHERE id = 5"
     con.query(sql, function (err, result) {
       if (err) {
         console.log(err);
